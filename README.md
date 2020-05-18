@@ -46,3 +46,7 @@ You should also configure a selenium hub and a node, to do this refer [Selenium 
 
 6. **Cucumber**
 * Instructions to install here: https://cucumber.io/docs/installation/java/
+
+7. **Selenium grid**
+* Instructions to install here: https://github.com/venkateshwarant/SeleniumGrid
+* note that while creating a grid, you should first create a hub vm and then create a node so that you can register this node to the hub. So first vagrant up the hub-vm and then the node-vm.
