@@ -75,3 +75,46 @@ final ChromeOptions chromeOptions = new ChromeOptions();
 **Note**
 * You should first follow the https://github.com/venkateshwarant/SeleniumGrid to build a selenium grid.
 * Change the remote driver url from 192.168.33.13 to the corresponding hub url which you have configured. 
+
+
+## Test description
+All the tests here are similar to the ones in [TestNG Tutorial](https://github.com/acapozucca/TestNG).
+
+To test whether the corresponding content is there in our product webpage, we have written -
+```
+$("#hi").shouldHave(text("Hi There!"));
+```
+Here we check whether content inside tag with id "hi" is "Hi There!"
+
+you can see more of selenide features [here](https://selenide.org/documentation.html).
+
+## Running test cases
+* To run the test case, just right click inside class and run as JUnit test case.
+
+## Running test cases using maven
+* To run test cases using maven, run the follwing command
+```
+mvn clean test
+```
+
+You will see the outputs similar to the below, which reflects whether the tests are running or not.
+```
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.569 sec
+
+Results :
+
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.305 s
+[INFO] Finished at: 2020-05-18T11:51:42+02:00
+[INFO] ------------------------------------------------------------------------
+```
+
+## Selenide report
+* selenide automatically packs the test reports and screenshots in the folder /build/reports/tests/
+
+## Final remarks
+These guidelines explain how to combine selenide, cucumber and selenium grid to write robust user acceptance test cases.
