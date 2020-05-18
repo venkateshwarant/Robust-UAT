@@ -11,7 +11,7 @@ The test cases in this tutorial will be similar to our test cases in [Cucumber T
 To run these tests, it is required to setup our product beforehand, if not done yet please follow the above link to get it configured.
 You should also configure a selenium hub and a node, to do this refer [Selenium grid Tutorial](https://github.com/venkateshwarant/SeleniumGrid)
 
-### Software
+### **Software**
 
 1. The Web-based Hello World case study
 * Instructions to install here: https://github.com/acapozucca/helloworld/blob/master/product.helloworld/README.md
