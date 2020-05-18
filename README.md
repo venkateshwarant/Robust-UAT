@@ -50,3 +50,28 @@ You should also configure a selenium hub and a node, to do this refer [Selenium 
 7. **Selenium grid**
 * Instructions to install here: https://github.com/venkateshwarant/SeleniumGrid
 * note that while creating a grid, you should first create a hub vm and then create a node so that you can register this node to the hub. So first vagrant up the hub-vm and then the node-vm.
+
+## Creating the remote driver in selenide
+
+To create a remote webdriver in selenide, we should first create the remote driver in selenium and then set this object to the selenide.
+
+```
+final ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--window-size=1200x600");
+        chromeOptions.setBinary("/usr/bin/google-chrome");
+        DesiredCapabilities capability = DesiredCapabilities.chrome();
+        capability.setBrowserName("chrome");
+        capability.setPlatform(Platform.LINUX);
+        capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.33.13:4444/wd/hub"), capability);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        WebDriverRunner.setWebDriver(driver);
+```
+
+**Note**
+* You should first follow the https://github.com/venkateshwarant/SeleniumGrid to build a selenium grid.
+* Change the remote driver url from 192.168.33.13 to the corresponding hub url which you have configured. 
